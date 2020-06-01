@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+  background-color: #fff;
+  color: #444;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100vh 850px 200px;
+  grid-template-areas:
+    "hd hd hd hd hd"
+    "main main main sd sd"
+    "ft ft ft ft ft";
+}
+
+.box {
+  background-color: rgba(148, 44, 44, 0.432);
+  border: 2px solid yellow;
+}
+
+/***********************/
+/******* HEADER ********/
+/***********************/
+
+.header {
+  position: relative;
+  grid-area: hd;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(images/hero.jpg);
+  background-size: cover;
+  height: 90vh;
+  background-attachment: fixed;
+}
+
+.section-content {
+  grid-area: main;
+}
+
+.nav-list ul {
+  display: flex;
+  margin-top: 20px;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.nav-item:link,
+.nav-item:visited {
+  color: #fff;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  margin-right: 50px;
+  font-size: 30px;
+  text-decoration: none;
+  transition: border-bottom 0.2s;
+  padding: 10px;
+}
+
+.nav-item:hover,
+.nav-item:active {
+  border-bottom: 2px solid rgb(0, 102, 255);
+}
+
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+
+.main-heading {
+  font-size: 800%;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+}
+
+.sub-heading {
+  font-size: 300%;
+  margin-top: 20px;
+  letter-spacing: 10px;
+  margin-bottom: 50px;
+}
+
+.btn:link,
+.btn:visited {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: rgb(10, 55, 138);
+  font-weight: bold;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-in 0.75s;
+  animation-fill-mode: backwards;
+}
+
+/**********************/
+/****** CONTENT *******/
+/**********************/
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-pic {
+  display: flex;
+  justify-content: center;
+}
+
+.content-matter h2 {
+  margin: 25px;
+  font-weight: 100;
+  font-size: 40px;
+}
+
+.content-matter p {
+  margin: 25px;
+  text-align: justify;
+}
+
+.pic1 {
+  margin-right: 60px;
+}
+
+/***************************/
+/******* SIDEBAR ***********/
+/***************************/
+
+.section-sidebar {
+  grid-area: sd;
+  display: flex;
+  flex-direction: column;
+  background-color: #e7e7e7;
+  align-items: center;
+}
+
+.other-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-heading {
+  margin-bottom: 20px;
+}
+
+.otpost-matter {
+  padding: 25px;
+  text-align: justify;
+}
+
+/***************************/
+/********** FOOTER *********/
+/***************************/
+
+.footer {
+  grid-area: ft;
+  background-color: rgb(116, 116, 116);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-links ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited {
+  color: #fff;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  margin-right: 50px;
+  font-size: 30px;
+  text-decoration: none;
+  transition: border-bottom 0.2s;
+  padding: 10px;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+  border-bottom: 2px solid rgb(0, 102, 255);
+}
