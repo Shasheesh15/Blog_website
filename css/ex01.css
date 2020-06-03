@@ -14,10 +14,11 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 100vh 850px 200px;
+  grid-template-rows: 100vh 850px 500px 200px;
   grid-template-areas:
     "hd hd hd hd hd"
     "main main main sd sd"
+    "wh wh wh wh wh"
     "ft ft ft ft ft";
 }
 
@@ -33,8 +34,7 @@ body {
 .header {
   position: relative;
   grid-area: hd;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(images/hero.jpg);
+  background-image: url(../images/image001.jpg);
   background-size: cover;
   height: 90vh;
   background-attachment: fixed;
@@ -201,6 +201,35 @@ body {
 }
 
 /***************************/
+/*********** Why us ********/
+/***************************/
+
+.section-why-us {
+  grid-area: wh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-us-heading {
+  font-size: 40px;
+}
+
+.why-us-cols {
+  display: flex;
+  text-align: center;
+}
+
+.why-us-slot {
+  text-align: center;
+}
+
+.why-us-slot-heading {
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+/***************************/
 /********** FOOTER *********/
 /***************************/
 
@@ -220,7 +249,7 @@ body {
 
 .footer-nav li a:link,
 .footer-nav li a:visited {
-  color: #fff;
+  color: #444;
   border-bottom: 2px solid transparent;
   text-decoration: none;
   margin-right: 50px;
